@@ -11,7 +11,6 @@ var player_state = PlayerState.D_IDLE
 func _ready():
 	click_position = Vector2(position.x, position.y)
 
-
 func _input(event):
 	if event is InputEventMouseButton and event.pressed or event is InputEventScreenTouch and event.pressed:
 		click_position = event.position
@@ -22,9 +21,9 @@ func _physics_process(delta):
 	var collision = move_and_slide()
 	if collision:
 		click_position = position
-
-	update_player_state(click_position)
 	
+	update_player_state(click_position)
+
 func update_player_state(target_position):
 	var dir = position.direction_to(click_position)
 
@@ -45,10 +44,10 @@ func update_player_state(target_position):
 			player_state = PlayerState.S_WALK
 		else: 
 			player_state = PlayerState.D_IDLE
+	
+	play_player_anim()
 
-	play_player_anim(player_state)
-		
-func play_player_anim(player_state):
+func play_player_anim():
 	match player_state:
 		PlayerState.A_IDLE: $AnimatedSprite2D.play("a-idle")
 		PlayerState.D_IDLE: $AnimatedSprite2D.play("d-idle")

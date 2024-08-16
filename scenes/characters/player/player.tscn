@@ -1,6 +1,6 @@
 [gd_scene load_steps=54 format=3 uid="uid://q82erqxlwb87"]
 
-[ext_resource type="Script" path="res://scenes/characters/player.gd" id="1_ffexo"]
+[ext_resource type="Script" path="res://scenes/characters/player/player.gd" id="1_ffexo"]
 [ext_resource type="Texture2D" uid="uid://dkfect1cikinc" path="res://assets/Adam_16x16.png" id="2_nmri8"]
 [ext_resource type="Texture2D" uid="uid://bfyspg8wqq5vm" path="res://assets/Adam_idle_anim_16x16.png" id="3_exqju"]
 
