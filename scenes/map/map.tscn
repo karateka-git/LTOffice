@@ -4141,3 +4141,9 @@ layer_3/tile_data = PackedInt32Array(65537, 524289, 17, 65538, 524289, 17, 65539
 [node name="player" parent="TileMap" instance=ExtResource("3_sm0lc")]
 z_index = 10
 position = Vector2(27, 64)
+
+[node name="Camera2D" type="Camera2D" parent="TileMap/player"]
+position = Vector2(36, 10)
+ignore_rotation = false
+zoom = Vector2(5, 5)
+position_smoothing_enabled = true

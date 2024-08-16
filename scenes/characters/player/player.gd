@@ -13,7 +13,7 @@ func _ready():
 
 func _input(event):
 	if event is InputEventMouseButton and event.pressed or event is InputEventScreenTouch and event.pressed:
-		click_position = event.position
+		click_position = get_global_mouse_position()
 
 func _physics_process(delta):
 	var target_position = (click_position - position).normalized()
