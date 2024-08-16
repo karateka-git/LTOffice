@@ -12,8 +12,12 @@ func _ready():
 	click_position = Vector2(position.x, position.y)
 
 func _input(event):
-	if event is InputEventMouseButton and event.pressed or event is InputEventScreenTouch and event.pressed:
+	if event is InputEventMouseButton and event.pressed:
 		click_position = get_global_mouse_position()
+		#click_position = to_global(event.position)
+	elif event is InputEventScreenTouch and event.pressed:
+		click_position = get_global_mouse_position()
+		#click_position = get_canvas_transform().affine_inverse().translated(event.position).origin
 
 func _physics_process(delta):
 	var target_position = (click_position - position).normalized()
